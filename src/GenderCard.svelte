@@ -48,7 +48,7 @@
 }
 
 i.disorder {
-    background-image: url("./brain.svg");
+    background-image: url("../brain.svg");
     background-size: 0.75rem;
     background-repeat: no-repeat;
     background-position: center;
