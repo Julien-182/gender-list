@@ -1,5 +1,6 @@
 <script>
-    export let filter;
+    import {filter} from "./store";
+
     export let opened;
 
     function toggleDialog() {
@@ -11,7 +12,7 @@
     <div class="dialog-body">
         <div class="filter">   
             <label for="hideMental">
-                <input id="hideMental" type="checkbox" bind:checked={filter.hideDisorder}>
+                <input id="hideMental" type="checkbox" bind:checked={$filter.hideDisorder}>
                 Hide Mental disorders
             </label>
         </div>

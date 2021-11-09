@@ -1,13 +1,18 @@
 <script>
-	export let filter;
-
 	import GenderCard from "./GenderCard.svelte"
 	import Filter from "./Filter.svelte"
 	import Footer from "./Footer.svelte"
+	import {filter} from "./store";
+	import { onDestroy, onMount } from "svelte";
 
+
+	// Attributes
 	const genderUrl = `https://maximeblanc.fr/api/genders`
 	let gendersByName = null
+	let promise = null;
+	let filteredGenders = null;
 
+	// Methods/functions
 	function groupByName(list) {
 		const map = new Map();
 		list.forEach((item) => {
@@ -35,7 +40,6 @@
 			}
 			return response.json();
 		}).then((data) => {
-			console.log(data)
 			gendersByName = groupByName(data);
 			return gendersByName;
 		}).catch((error) => {
@@ -58,14 +62,25 @@
 		return filtered;
 	}
 
-	let promise = fetchGenders();
+	// Store subscription
+	const filterUnsubscribe =filter.subscribe((f) => {
+		filteredGenders = filterGenders(gendersByName, f);
+	})
 
+	// Lifecycle
+	onMount(async () => {
+		promise = fetchGenders();
+	})
+
+	onDestroy(filterUnsubscribe);
+
+	// Watchers
 	$: filteredGenders = filterGenders(gendersByName, filter);
 </script>
 
 <nav>
 	<h1>Gender List</h1>
-	<Filter bind:filter={filter}/>
+	<Filter/>
 </nav>
 
 <main>
@@ -115,7 +130,7 @@
 		text-align: center;
 		max-width: 540px;
 		width: 100%;
-		min-height: calc(100vh - 9em);
+		min-height: calc(100vh - 8em);
 		background: white;
 		margin: auto;
 		border: 1px solid #eee;

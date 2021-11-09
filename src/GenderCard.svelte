@@ -43,7 +43,7 @@
 }
 
 .gender-card.opened h2 {
-    transform: scale(1.05);
+    transform: scale(1.025);
 }
 
 .gender-card.opened {

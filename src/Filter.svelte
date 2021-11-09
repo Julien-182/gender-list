@@ -1,6 +1,4 @@
 <script>
-    export let filter;
-
     import FilterDialog from "./FilterDialog.svelte";
 
     let opened = false;
@@ -17,7 +15,7 @@
 
 
 {#if opened}
-    <FilterDialog bind:filter={filter} bind:opened={opened} />
+    <FilterDialog bind:opened={opened} />
 {/if}
 
 <style>
