@@ -9,7 +9,7 @@
     }
 </script>
 
-<i class="filter-icon" on:click={openDialog}>
+<i class="filter-icon" tabindex="0" on:click={openDialog}>
     <img src="./filter.svg" alt="filter icon">
 </i>
 

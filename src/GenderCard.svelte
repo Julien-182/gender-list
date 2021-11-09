@@ -3,11 +3,17 @@
 
     export let gender;
 
+    function handleKey(event) {
+        if (event.code == "Enter" || event.code == "Space") {
+            openDetails = !openDetails
+        }
+    }
+
     let openDetails = false;
 </script>
 
-<article class="{'gender-card ' + (openDetails ? 'opened' : '')}">
-    <h2 on:click={() => openDetails = !openDetails}>
+<article class="{'gender-card ' + (openDetails ? 'opened' : '')}" aria-expanded="{openDetails}">
+    <h2 tabindex="0" role="button" aria-pressed="false" on:click={() => openDetails = !openDetails} on:keydown={handleKey}>
         {gender.name}
         {#if gender.mentalDisorder}
             <i class="disorder" title="This gender is a mental disorder"></i>
