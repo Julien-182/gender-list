@@ -12,7 +12,7 @@
 </script>
 
 <i class="filter-icon" on:click={openDialog}>
-    <img src="/filter.svg" alt="filter icon">
+    <img src="./filter.svg" alt="filter icon">
 </i>
 
 
