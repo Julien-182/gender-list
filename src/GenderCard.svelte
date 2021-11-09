@@ -36,6 +36,7 @@
     margin-top: 0.25em;
     font-weight:normal;
     transition: 0.25s ease-in-out;
+    word-break: break-all;
 }
 
 .gender-card.opened h2 {
