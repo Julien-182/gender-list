@@ -6,6 +6,8 @@ html, body {
 	overflow-x: hidden;
 	margin: 0;
 	padding: 0;
+
+	--accent-color: #bf1996;
 }
 
 body {
@@ -13,6 +15,7 @@ body {
 	margin: 0;
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	background: linear-gradient(45deg, #5bcefa, #f5a9b8, #fff, #fff, #f5a9b8, #5bcefa);
 }
 
 label {
