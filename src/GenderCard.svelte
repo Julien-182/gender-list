@@ -37,10 +37,13 @@
     font-weight:normal;
     transition: 0.25s ease-in-out;
     word-break: break-all;
+    font-size: 1.3rem;
+    transition: 0.25s ease-out;
+    transition-property: transform;
 }
 
 .gender-card.opened h2 {
-    font-weight: bold;
+    transform: scale(1.05);
 }
 
 .gender-card.opened {
@@ -58,7 +61,7 @@ i.disorder {
     height: 1rem;
     width: 1rem;
     border-radius: 50%;
-    background-color: #bf1996;
+    background-color: var(--accent-color);
     vertical-align: middle;
     margin: 0 0.25em;
 }

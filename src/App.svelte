@@ -99,7 +99,7 @@
 		display: flex;
 		width: 100%;
 		top:0;
-		background-color: #bf1996;
+		background-color: var(--accent-color);
 		color: white;
 		z-index: 2;
 		height: 3em;
@@ -113,9 +113,12 @@
 	}
 	main {
 		text-align: center;
-		max-width: 640px;
+		max-width: 540px;
 		width: 100%;
 		min-height: calc(100vh - 9em);
+		background: white;
+		margin: auto;
+		border: 1px solid #eee;
 	}
 
 	dl {
@@ -140,9 +143,9 @@
 		color: #333;
 		background-color: #fff;
 		height: 2rem;
-		width: 2rem;
+		width: 3rem;
 		border-radius: 50%;
-		padding: 0.5rem 1rem;
+		padding: 0.5rem 1.2rem;
 		grid-column: 1;
 		display: inline-flex;
 		align-items: center;
@@ -151,7 +154,7 @@
 		margin-left: 0.5rem;
 		text-decoration: underline;
 		text-decoration-color: currentcolor;
-		text-decoration-color: #bf1996;
+		text-decoration-color: var(--accent-color);
 		text-decoration-thickness: 3px;
 	}
 </style>
