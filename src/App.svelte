@@ -2,6 +2,7 @@
 	import GenderCard from "./GenderCard.svelte"
 	import Filter from "./Filter.svelte"
 	import Footer from "./Footer.svelte"
+	import ContentLoader from "./ContentLoader.svelte"
 	import {filter} from "./store";
 	import { onDestroy, onMount } from "svelte";
 
@@ -84,8 +85,17 @@
 </nav>
 
 <main>
-	{#await promise}
-		<p class="notitication-message">Loading gender...</p>
+	{#await promise}	
+		<div class="content-placeholder">
+			{#each Array(5) as _}
+				<ContentLoader primaryColor={"#bf199699"} secondaryColor={"#bf1996"} speed="1">
+					<rect x="5" y="15" rx="5" ry="5" width="180" height="15" />
+					<circle cx="210" cy="22" r="8" />
+					<rect x="5" y="80" rx="5" ry="5" width="180" height="15" />
+					<circle cx="210" cy="88" r="8" />
+				</ContentLoader>
+			{/each}
+		</div>
 	{:then _response}
 		{#if filteredGenders && filteredGenders.size > 0}
 			<dl>
@@ -135,7 +145,9 @@
 		margin: auto;
 		border: 1px solid #eee;
 	}
-
+	.content-placeholder {
+		margin-left: 2em;
+	}
 	dl {
 		width: 100%;
 		display: grid;
@@ -159,14 +171,12 @@
 		background-color: #fff;
 		height: 2rem;
 		width: 3rem;
-		border-radius: 50%;
 		padding: 0.5rem 1.2rem;
 		grid-column: 1;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
   		box-sizing: border-box;
-		margin-left: 0.5rem;
 		text-decoration: underline;
 		text-decoration-color: currentcolor;
 		text-decoration-color: var(--accent-color);
