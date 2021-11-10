@@ -172,4 +172,13 @@
 		text-decoration-color: var(--accent-color);
 		text-decoration-thickness: 3px;
 	}
+	dt::before {
+		content: '';
+		display: inline-block;
+		position: absolute;
+		top: -1em;
+		height: 1em;
+		width: 100%;
+		background: linear-gradient(#fff0, #fff);
+	}
 </style>
