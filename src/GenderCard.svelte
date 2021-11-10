@@ -39,17 +39,25 @@
    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;*/
 }
 .gender-card h2 {
-    margin-top: 0.25em;
+    margin-top: 0;
     font-weight:normal;
     transition: 0.25s ease-in-out;
     word-break: break-all;
     font-size: 1.3rem;
     transition: 0.25s ease-out;
     transition-property: transform;
+    display: inline-block;
+    padding-bottom: .25em;
+}
+
+.gender-card h2:focus {
+    outline: none;
+    border-bottom: 1px dashed var(--accent-color);
 }
 
 .gender-card.opened h2 {
     transform: scale(1.025);
+    margin-bottom: 0;
 }
 
 .gender-card.opened {
