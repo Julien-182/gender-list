@@ -85,14 +85,16 @@
 </nav>
 
 <main>
-	{#await promise}	
+	{#await promise}		
 		<div class="content-placeholder">
-			{#each Array(5) as _}
-				<ContentLoader primaryColor={"#bf199699"} secondaryColor={"#bf1996"} speed="1">
+			{#each Array(4) as _}
+				<ContentLoader height={190} primaryColor={"#bf199699"} secondaryColor={"#bf1996"} speed="1">
 					<rect x="5" y="15" rx="5" ry="5" width="180" height="15" />
 					<circle cx="210" cy="22" r="8" />
-					<rect x="5" y="80" rx="5" ry="5" width="180" height="15" />
-					<circle cx="210" cy="88" r="8" />
+					<rect x="5" y="80" rx="5" ry="5" width="140" height="15" />
+					<circle cx="170" cy="88" r="8" />
+					<rect x="5" y="145" rx="5" ry="5" width="160" height="15" />
+					<circle cx="190" cy="154" r="8" />
 				</ContentLoader>
 			{/each}
 		</div>
@@ -147,6 +149,9 @@
 	}
 	.content-placeholder {
 		margin-left: 2em;
+	}
+	.content-placeholder:first-child {
+		margin-top: 1.5em;
 	}
 	dl {
 		width: 100%;
