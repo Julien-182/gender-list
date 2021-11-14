@@ -18,7 +18,7 @@
     <FilterDialog bind:opened={opened} />
 {/if}
 
-<style>
+<style lang="scss" type="text/scss">
     .filter-icon {
         display: inline-flex;
         height: 2em;

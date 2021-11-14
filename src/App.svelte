@@ -120,7 +120,7 @@
 </main>
 <Footer/>
 
-<style>
+<style lang="scss" type="text/scss">
 	nav {
 		position: sticky;
 		display: flex;
@@ -134,9 +134,10 @@
 		justify-content: space-between;
 		align-items: center;
 		box-shadow: rgba(117, 70, 96, 0.35) 0px 5px 15px;
-	}
-	nav h1 {
-		margin-left: 0.25em;
+	
+		h1 {
+			margin-left: 0.25em;
+		}
 	}
 	main {
 		text-align: center;
@@ -149,9 +150,10 @@
 	}
 	.content-placeholder {
 		margin-left: 2em;
-	}
-	.content-placeholder:first-child {
-		margin-top: 1.5em;
+		
+		&:first-child {
+			margin-top: 1.5em;
+		}
 	}
 	dl {
 		width: 100%;
@@ -186,14 +188,15 @@
 		text-decoration-color: currentcolor;
 		text-decoration-color: var(--accent-color);
 		text-decoration-thickness: 3px;
-	}
-	dt::before {
-		content: '';
-		display: inline-block;
-		position: absolute;
-		top: -1em;
-		height: 1em;
-		width: 100%;
-		background: linear-gradient(#fff0, #fff);
+
+		&::before {
+			content: '';
+			display: inline-block;
+			position: absolute;
+			top: -1em;
+			height: 1em;
+			width: 100%;
+			background: linear-gradient(#fff0, #fff);
+		}
 	}
 </style>

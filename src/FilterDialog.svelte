@@ -21,7 +21,7 @@
     <div class="overlay on:click={toggleDialog}"></div>
 </div>
 
-<style>
+<style lang="scss" type="text/scss">
 
     .dialog-container {
         color: #111;
@@ -65,10 +65,10 @@
         justify-content: center;
         align-items: center;
         line-height: 1em;
-    }
-    
-    .filter input {
-        margin-right: 0.25em;
+
+        input {
+            margin-right: 0.25em;
+        }
     }
 
 </style>
